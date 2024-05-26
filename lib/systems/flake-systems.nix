@@ -24,6 +24,8 @@
   "armv5tel-linux"
   "powerpc64le-linux"
   "riscv64-linux"
+  "i686-hurd"
+  "x86_64-hurd"
 
   # "x86_64-freebsd" is excluded because it is mostly broken
 ]

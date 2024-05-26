@@ -327,6 +327,7 @@ rec {
     macos    = { execFormat = macho;   families = { inherit darwin; }; name = "darwin"; };
     ios      = { execFormat = macho;   families = { inherit darwin; }; };
     freebsd  = { execFormat = elf;     families = { inherit bsd; }; name = "freebsd"; };
+    hurd     = { execFormat = elf;     families = { }; };
     linux    = { execFormat = elf;     families = { }; };
     netbsd   = { execFormat = elf;     families = { inherit bsd; }; };
     none     = { execFormat = unknown; families = { }; };
@@ -453,6 +454,8 @@ rec {
         then { cpu = elemAt l 0;                      kernel = "windows";  abi = "msvc";     }
       else if (elemAt l 1) == "elf"
         then { cpu = elemAt l 0; vendor = "unknown";  kernel = "none";     abi = elemAt l 1; }
+      else if (elemAt l 1) == "gnu"
+        then { cpu = elemAt l 0;                      kernel = "hurd";     abi = "gnu";      }
       else   { cpu = elemAt l 0;                      kernel = elemAt l 1;                   };
     "3" =
       # cpu-kernel-environment

@@ -21,6 +21,9 @@ let
     # illumos
     "x86_64-solaris"
 
+    # Hurd
+    "i686-hurd" "x86_64-hurd"
+
     # JS
     "javascript-ghcjs"
 
@@ -112,6 +115,7 @@ in {
   redox         = filterDoubles predicates.isRedox;
   windows       = filterDoubles predicates.isWindows;
   genode        = filterDoubles predicates.isGenode;
+  hurd          = filterDoubles predicates.isHurd;
 
   embedded      = filterDoubles predicates.isNone;
 

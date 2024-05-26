@@ -342,6 +342,15 @@ rec {
     useLLVM = true;
   };
 
+  # Hurd
+  i686-hurd = {
+    config = "i686-gnu";
+  };
+
+  x86_64-hurd = {
+    config = "x86_64-gnu";
+  };
+
   #
   # WASM
   #
